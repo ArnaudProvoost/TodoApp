@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+//override Bootstrap variables and custom mixins
+@import "variables";
+
+//reboot
+@import "reboot";
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//custom code/partials
