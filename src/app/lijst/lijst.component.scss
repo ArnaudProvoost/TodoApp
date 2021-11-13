@@ -1,4 +1,30 @@
+$bgc: inherit;
+
 .card {
-  background-color: inherit;
+  background-color: $bgc;
+  color: white;
+  border-color: white;
+  border-radius: 0rem;
+}
+
+.card-div {
+  border-radius: 50%;
+}
+
+.card-header {
+  background-color: rgba(255,255,255,0.2)
+}
+
+.card-body {
+  background-color: rgba(255,255,255,0.5)
+}
+
+.items-link {
   color: inherit;
+  text-decoration: none;
+}
+
+.items-link:hover {
+  color: rgba(0,0,0,0.5);
+  text-decoration: underline;
 }

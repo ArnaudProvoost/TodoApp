@@ -3,20 +3,12 @@
     {
       "id": 1,
       "title": "Title lijst 2",
-      "lijstbackgroundcolor": "#5c67ff",
-      "lijstcolor": "#000000"
+      "lijstbackgroundcolor": "#0011fa"
     },
     {
       "id": 2,
-      "title": "Yeeet",
-      "lijstbackgroundcolor": "#333333",
-      "lijstcolor": "#ffffff"
-    },
-    {
-      "id": 3,
       "title": "Lijst 3",
-      "lijstbackgroundcolor": "#000000",
-      "lijstcolor": "#ffffff"
+      "lijstbackgroundcolor": "#000000"
     }
   ],
   "Items": [
@@ -34,11 +26,6 @@
       "id": "4",
       "lijstenId": "2",
       "title": "title 4"
-    },
-    {
-      "id": "tTVu95y",
-      "title": "Ja ma Yeeee",
-      "lijstenId": "1"
     }
   ]
 }
