@@ -2,13 +2,19 @@
   "lijsten": [
     {
       "id": 1,
-      "title": "Title lijst 2",
+      "title": "Lijst 2",
       "lijstbackgroundcolor": "#0011fa"
     },
     {
       "id": 2,
       "title": "Lijst 3",
       "lijstbackgroundcolor": "#000000"
+    },
+    {
+      "id": 3,
+      "title": "TEST3",
+      "lijstcolor": "",
+      "lijstbackgroundcolor": "#ff0000"
     }
   ],
   "Items": [

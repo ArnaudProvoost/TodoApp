@@ -1,16 +1,18 @@
 <h1>Lijsten Todo</h1>
 <button type="button" class="btn btn-success addBtn mb-2" (click)="add()"><i class="fas fa-plus"></i> Add new lijst</button>
-<div *ngFor="let lijst of lijsten" class="w-100">
-  <div class="card-div" [style.background-color]="lijst.lijstbackgroundcolor">
-    <div class="card w-100 text-left mb-2" >
-      <h5 class="card-header">{{lijst.title}}</h5>
-      <div class="card-body">
-        <div class="align-items-center justify-content-between d-flex">
-          <a href=""><i class="far fa-circle"></i></a>
-          <p class="mb-0 pl-5">Dit is de volgende stap <br> <a (click)="items(lijst.id)" class="items-link">Klik hier voor alle stappen</a></p>
-          <div class="btn-group btn-group-sm">
-            <button type="button" class="btn btn-success" (click)="edit(lijst.id)"><i class="fas fa-edit"></i></button>
-            <button type="button" class="btn btn-danger" (click)="delete(lijst.id)"><i class="far fa-trash-alt"></i></button>
+<div class="row w-100">
+  <div *ngFor="let lijst of lijsten" class="col-lg-4 col-12 col-md-6 p-2 lijst-div">
+    <div class="card-div">
+      <div class="card w-100 text-left mb-2" [style.background-color]="lijst.lijstbackgroundcolor">
+        <h5 class="card-header">{{lijst.title}}</h5>
+        <div class="card-body">
+          <div class="align-items-center justify-content-between d-flex">
+            <a href=""><i class="far fa-circle"></i></a>
+            <p class="mb-0 pl-5">Dit is de volgende stap <br> <a (click)="items(lijst.id)" class="items-link">Klik hier voor alle stappen</a></p>
+            <div class="btn-group btn-group-sm">
+              <button type="button" class="btn btn-success" (click)="edit(lijst.id)"><i class="fas fa-edit"></i></button>
+              <button type="button" class="btn btn-danger" (click)="delete(lijst.id)"><i class="far fa-trash-alt"></i></button>
+            </div>
           </div>
         </div>
       </div>
