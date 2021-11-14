@@ -14,7 +14,7 @@ export class LijstFormComponent implements OnInit, OnDestroy {
   isEdit: boolean = false;
   lijstId: number = 0;
 
-  lijst: Lijst = {id: 0,title: "",lijstcolor: "", lijstbackgroundcolor: ""};
+  lijst: Lijst = {id: 0,title: "", lijstbackgroundcolor: ""};
 
   isSubmitted: boolean = false;
   errorMessage: string = "";

@@ -2,7 +2,7 @@
   "lijsten": [
     {
       "id": 1,
-      "title": "Lijst 2",
+      "title": "School",
       "lijstbackgroundcolor": "#0011fa"
     },
     {
@@ -13,7 +13,6 @@
     {
       "id": 3,
       "title": "TEST3",
-      "lijstcolor": "",
       "lijstbackgroundcolor": "#ff0000"
     }
   ],
@@ -32,6 +31,16 @@
       "id": "4",
       "lijstenId": "2",
       "title": "title 4"
+    }
+  ],
+  "Statussen": [
+    {
+      "id": "1",
+      "name": "Done"
+    },
+    {
+      "id": "2",
+      "name": "Not Done"
     }
   ]
 }

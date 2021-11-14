@@ -1,14 +1,16 @@
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
+<h2 *ngIf="isAdd">Een lijst toevoegen</h2>
+<h2 *ngIf="isEdit">De lijst met title {{lijst.title}} aanpassen</h2>
 <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
-  <div class="form-group">
-    <label for="name">Title</label>
+  <div class="form-group Title">
+    <label for="name">Titel lijst</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="Title" [(ngModel)]="lijst.title"
            #name="ngModel" required>
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Title is required</div>
   </div>
-  <div class="form-group">
+  <div class="form-group Color">
     <label for="name">Achtergrond Kleur</label>
     <input type="color" class="form-control" id="bgccolor" name="bgccolor" placeholder="Color" [(ngModel)]="lijst.lijstbackgroundcolor"
            #name="ngModel" required>
