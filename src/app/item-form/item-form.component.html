@@ -10,7 +10,7 @@
   </div>
   <div class="form-group">
     <label for="name">LijstenId</label>
-    <input type="text" class="form-control" id="lijstenId" name="lijstenId" placeholder="lijstenId" [(ngModel)]="item.lijstenId"
+    <input type="text" class="form-control" id="lijstenId" name="lijstenId" placeholder="lijstenId" [(ngModel)]="item.listId"
            #name="ngModel" required>
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">lijstenId is required</div>
   </div>

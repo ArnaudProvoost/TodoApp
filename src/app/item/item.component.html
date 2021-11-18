@@ -1,19 +1,22 @@
+<h1></h1>
 <button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fas fa-plus"></i> Add new item</button>
 <table class="table table-borderless mt-5">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col"></th>
+      <th scope="col">Name</th>
+      <th scope="col">Uitleg</th>
+      <th scope="col">Bewerken</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let item of items">
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
+      <td></td>
+      <td>{{item.title}}</td>
+      <td>{{item.listId}}</td>
+      <td>
+        <button type="button" class="btn btn-success" (click)="edit(item.id)"><i class="fas fa-edit"></i></button>
+        <button type="button" class="btn btn-danger" (click)="delete(item.id)"><i class="far fa-trash-alt"></i></button></td>
     </tr>
   </tbody>
 </table>

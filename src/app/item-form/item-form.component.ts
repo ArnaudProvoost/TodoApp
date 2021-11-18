@@ -14,7 +14,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   isEdit: boolean = false;
   itemId: number = 0;
 
-  item: Item = { id: 0,title: "",lijstenId: 0}
+  item: Item = { id: 0,title: "",listId: 0}
 
   isSubmitted: boolean = false;
   errorMessage: string = "";
@@ -46,7 +46,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     this.isSubmitted = true;
     if (this.isAdd) {
       this.postItem$ = this.itemservice.postItem(this.item).subscribe(result => {
-        this.router.navigateByUrl("items/"+this.item.lijstenId);
+        this.router.navigateByUrl("items/"+this.item.listId);
       },
       error => {
         this.errorMessage = error.message;
@@ -54,7 +54,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     }
     if (this.isEdit) {
       this.putItem$ = this.itemservice.putItem(this.itemId, this.item).subscribe(result => {
-        this.router.navigateByUrl("items/"+this.item.lijstenId);
+        this.router.navigateByUrl("items/"+this.item.listId);
       },
       error => {
         this.errorMessage = error.message;

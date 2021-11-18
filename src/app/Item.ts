@@ -1,5 +1,5 @@
 export interface Item {
   id: number;
-  lijstenId: number;
+  listId: number;
   title: string;
 }

@@ -1,36 +1,51 @@
 {
-  "lijsten": [
+  "lists": [
     {
       "id": 1,
       "title": "School",
-      "lijstbackgroundcolor": "#0011fa"
+      "lijstbackgroundcolor": "#0015ff"
     },
     {
       "id": 2,
-      "title": "Lijst 3",
+      "title": "Werk",
       "lijstbackgroundcolor": "#000000"
     },
     {
       "id": 3,
-      "title": "TEST3",
+      "title": "Privé",
       "lijstbackgroundcolor": "#ff0000"
+    },
+    {
+      "id": 4,
+      "title": "Huiswerk",
+      "lijstbackgroundcolor": "#00ff40"
     }
   ],
-  "Items": [
+  "items": [
     {
-      "id": "1",
-      "lijstenId": "1",
-      "title": "title 1"
+      "id": 1,
+      "listId": 1,
+      "title": "Taak AI"
     },
     {
-      "id": "3",
-      "lijstenId": "2",
-      "title": "title 3"
+      "id": 2,
+      "listId": 1,
+      "title": "Taak Angular"
     },
     {
-      "id": "4",
-      "lijstenId": "2",
-      "title": "title 4"
+      "id": 3,
+      "listId": 2,
+      "title": "Contract tekenen"
+    },
+    {
+      "id": 4,
+      "listId": 2,
+      "title": "github aanmaken"
+    },
+    {
+      "id": 5,
+      "listId": 3,
+      "title": "privé"
     }
   ],
   "Statussen": [

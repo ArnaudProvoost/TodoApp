@@ -11,7 +11,7 @@ export class ItemService {
   constructor(private httpClient: HttpClient) { }
 
   getItemsByListId(lijstenId: string): Observable<Item[]> {
-    return this.httpClient.get<Item[]>("http://localhost:3000/items?lijstenId="+lijstenId)
+    return this.httpClient.get<Item[]>("http://localhost:3000/items?_expand=list&listId="+lijstenId)
   }
 
   getItemById(id: number): Observable<Item> {
