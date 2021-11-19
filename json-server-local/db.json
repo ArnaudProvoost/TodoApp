@@ -24,37 +24,46 @@
   "items": [
     {
       "id": 1,
-      "listId": 1,
-      "title": "Taak AI"
+      "title": "",
+      "listId": 0,
+      "statusId": 0
     },
     {
       "id": 2,
-      "listId": 1,
-      "title": "Taak Angular"
+      "title": "",
+      "listId": 0,
+      "statusId": 0
     },
     {
       "id": 3,
       "listId": 2,
-      "title": "Contract tekenen"
+      "title": "Contract tekenen",
+      "statusId": 3
     },
     {
       "id": 4,
       "listId": 2,
-      "title": "github aanmaken"
+      "title": "github aanmaken",
+      "statusId": 3
     },
     {
       "id": 5,
       "listId": 3,
-      "title": "privé"
+      "title": "privé",
+      "statusId": 3
     }
   ],
-  "Statussen": [
+  "status": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Done"
     },
     {
-      "id": "2",
+      "id": 2,
+      "name": "Doing"
+    },
+    {
+      "id": 3,
       "name": "Not Done"
     }
   ]

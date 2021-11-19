@@ -14,7 +14,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   isEdit: boolean = false;
   itemId: number = 0;
 
-  item: Item = { id: 0,title: "",listId: 0}
+  item: Item = { id: 0,title: "",listId: 0,statusId: 0}
 
   isSubmitted: boolean = false;
   errorMessage: string = "";
