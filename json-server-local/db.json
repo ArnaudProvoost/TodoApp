@@ -24,15 +24,15 @@
   "items": [
     {
       "id": 1,
-      "title": "",
-      "listId": 0,
-      "statusId": 0
+      "title": "Done Test",
+      "listId": "1",
+      "statusId": 1
     },
     {
       "id": 2,
-      "title": "",
-      "listId": 0,
-      "statusId": 0
+      "title": "Not Done",
+      "listId": 1,
+      "statusId": 3
     },
     {
       "id": 3,
@@ -50,6 +50,12 @@
       "id": 5,
       "listId": 3,
       "title": "privé",
+      "statusId": 3
+    },
+    {
+      "id": 6,
+      "title": "Yeet",
+      "listId": "1",
       "statusId": 3
     }
   ],

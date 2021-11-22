@@ -12,8 +12,8 @@
   <tbody class="w-100">
     <tr *ngFor="let item of items">
       <td>
-        <a *ngIf="item.statusId == 3" (click)="done(item.id)"><i class="far fa-circle notdone"></i> {{item.id}} </a>
-        <a *ngIf="item.statusId == 1" (click)="notdone(item.id)"><i class="fas fa-check-circle done"></i> {{item.id}} </a>
+        <a *ngIf="item.statusId == 3" (click)="notdone(item.id)"><i class="far fa-circle notdone"></i></a>
+        <a *ngIf="item.statusId == 1" (click)="done(item.id)"><i class="fas fa-check-circle done"></i></a>
       </td>
       <td>{{item.title}}</td>
       <td>{{item.listId}}</td>

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Item } from '../Item';
 import { ItemService } from '../item.service';
+import { Lijst } from '../lijst';
+import { LijstService } from '../lijst.service';
 
 @Component({
   selector: 'app-item-form',
@@ -15,6 +17,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   itemId: number = 0;
 
   item: Item = { id: 0,title: "",listId: 0,statusId: 0}
+  lists: Lijst[] = [];
 
   isSubmitted: boolean = false;
   errorMessage: string = "";
@@ -22,6 +25,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   item$: Subscription = new Subscription();
   postItem$: Subscription = new Subscription();
   putItem$: Subscription = new Subscription();
+  lists$: Subscription = new Subscription();
 
   constructor(private router: Router, private itemservice: ItemService) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
@@ -45,6 +49,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   onSubmit() {
     this.isSubmitted = true;
     if (this.isAdd) {
+      this.item.statusId = 3;
       this.postItem$ = this.itemservice.postItem(this.item).subscribe(result => {
         this.router.navigateByUrl("items/"+this.item.listId);
       },
