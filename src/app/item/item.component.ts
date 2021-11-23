@@ -31,7 +31,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   }
 
   add() {
-    this.router.navigate(['item/form'], {state: {mode: 'add'}});
+    this.router.navigate(['item/form'], {state: {listId: this.lijstenId,mode: 'add'}});
   }
 
   edit(id: number) {

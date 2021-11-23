@@ -15,8 +15,9 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   isAdd: boolean = false;
   isEdit: boolean = false;
   itemId: number = 0;
+  listId: number = 0
 
-  item: Item = { id: 0,title: "",listId: 0,statusId: 0}
+  item: Item = { id: 0,title: "",listId: 0,statusId: 0,datum: ""}
   lists: Lijst[] = [];
 
   isSubmitted: boolean = false;
@@ -31,6 +32,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
     this.itemId = this.router.getCurrentNavigation()?.extras.state?.id;
+    this.listId = this.router.getCurrentNavigation()?.extras.state?.listId;
 
     if (this.itemId != null && this.itemId > 0) {
       this.item$ = this.itemservice.getItemById(this.itemId).subscribe(result => this.item = result);
@@ -50,6 +52,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     this.isSubmitted = true;
     if (this.isAdd) {
       this.item.statusId = 3;
+      this.item.listId = this.listId;
       this.postItem$ = this.itemservice.postItem(this.item).subscribe(result => {
         this.router.navigateByUrl("items/"+this.item.listId);
       },

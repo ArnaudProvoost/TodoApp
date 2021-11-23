@@ -8,6 +8,11 @@
            #name="ngModel" required>
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">title is required</div>
   </div>
+  <div class="form-group">
+    <label for="name">Deadline</label>
+    <input type="date" class="form-control" id="datum" name="datum" placeholder="datum" [(ngModel)]="item.datum"
+           #name="ngModel">
+  </div>
   <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!itemForm.form.valid || isSubmitted">Add</button>
   <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!itemForm.form.valid || isSubmitted">Save</button>
 </form>

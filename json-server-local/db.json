@@ -26,37 +26,57 @@
       "id": 1,
       "title": "Done Test",
       "listId": "1",
-      "statusId": 1
+      "statusId": 1,
+      "datum": "2021-11-23"
     },
     {
       "id": 2,
       "title": "Not Done",
       "listId": 1,
-      "statusId": 3
+      "statusId": 3,
+      "datum": "2021-11-23"
     },
     {
       "id": 3,
       "listId": 2,
       "title": "Contract tekenen",
-      "statusId": 3
+      "statusId": 3,
+      "datum": "2021-11-23"
     },
     {
       "id": 4,
       "listId": 2,
       "title": "github aanmaken",
-      "statusId": 3
+      "statusId": 3,
+      "datum": "2021-11-23"
     },
     {
       "id": 5,
       "listId": 3,
       "title": "privé",
-      "statusId": 3
+      "statusId": 3,
+      "datum": "2021-11-23"
     },
     {
       "id": 6,
       "title": "Yeet",
       "listId": "1",
-      "statusId": 3
+      "statusId": 3,
+      "datum": "2021-11-23"
+    },
+    {
+      "id": 7,
+      "title": "Wenen",
+      "listId": 0,
+      "statusId": 3,
+      "datum": "2021-11-23"
+    },
+    {
+      "id": 8,
+      "title": "Test lijst 1",
+      "listId": "1",
+      "statusId": 3,
+      "datum": "2021-11-28"
     }
   ],
   "status": [
