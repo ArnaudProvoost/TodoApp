@@ -25,30 +25,66 @@
     {
       "id": 1,
       "title": "Test",
-      "listId": "1",
-      "statusId": 3,
-      "datum": "2021-11-11"
+      "listId": 1,
+      "statusId": 1,
+      "datum": "2021-11-11",
+      "volgorde": 1
     },
     {
       "id": 2,
       "title": "Notdone",
-      "listId": "1",
+      "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-24"
+      "datum": "2021-11-24",
+      "volgorde": 2
     },
     {
       "id": 3,
       "title": "Test",
-      "listId": "1",
+      "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-25"
+      "datum": "2021-11-25",
+      "volgorde": 3
     },
     {
       "id": 4,
       "title": "test3",
-      "listId": "1",
+      "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-28"
+      "datum": "2021-11-28",
+      "volgorde": 4
+    },
+    {
+      "id": 5,
+      "title": "test 6",
+      "listId": 1,
+      "statusId": 3,
+      "datum": "2021-11-24",
+      "volgorde": 5
+    },
+    {
+      "id": 6,
+      "title": "Test 6",
+      "listId": 1,
+      "statusId": 3,
+      "datum": "2021-11-24",
+      "volgorde": 6
+    },
+    {
+      "id": 7,
+      "title": "Test 1",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-11-01",
+      "volgorde": 1
+    },
+    {
+      "id": 8,
+      "title": "test 2",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-11-25",
+      "volgorde": 2
     }
   ],
   "status": [

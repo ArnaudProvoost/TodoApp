@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Item } from '../Item';
 import { ItemService } from '../item.service';
+import { LijstService } from '../lijst.service';
 
 @Component({
   selector: 'app-item-form',
@@ -15,7 +16,9 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   itemId: number = 0;
   listId: number = 0;
 
-  item: Item = { id: 0,title: "",listId: 0,statusId: 0,datum: ""}
+
+  item: Item = { id: 0,title: "",listId: 0,statusId: 0,datum: "",volgorde: 0}
+  items: Item[] = [];
 
   isSubmitted: boolean = false;
   errorMessage: string = "";
@@ -24,7 +27,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   postItem$: Subscription = new Subscription();
   putItem$: Subscription = new Subscription();
 
-  constructor(private router: Router, private itemservice: ItemService) {
+  constructor(private router: Router, private itemservice: ItemService, private lijstservice: LijstService) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
     this.itemId = this.router.getCurrentNavigation()?.extras.state?.Id;
@@ -32,6 +35,10 @@ export class ItemFormComponent implements OnInit, OnDestroy {
 
     if (this.itemId != null && this.itemId > 0) {
       this.item$ = this.itemservice.getItemById(this.itemId).subscribe(result => this.item = result);
+    }
+
+    if (this.listId != null) {
+      this.getItems();
     }
   }
 
@@ -47,6 +54,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     this.isSubmitted = true;
     if (this.isAdd) {
       this.item.statusId = 3;
+      this.item.volgorde = this.items.length + 1
       this.item.listId = this.listId;
       this.postItem$ = this.itemservice.postItem(this.item).subscribe(result => {
         this.router.navigateByUrl("items/"+this.item.listId);
@@ -63,6 +71,10 @@ export class ItemFormComponent implements OnInit, OnDestroy {
         this.errorMessage = error.message;
       });
     }
+  }
+
+  getItems() {
+    this.itemservice.getItemsByListId(this.listId).subscribe(result => this.items = result);
   }
 
 }

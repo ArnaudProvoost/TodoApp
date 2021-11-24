@@ -14,12 +14,14 @@ export class ItemComponent implements OnInit, OnDestroy {
   items$: Subscription = new Subscription();
   deleteItem$: Subscription = new Subscription();
   lijstenId: any;
+  listId: number = 0;
   errorMessage: string = '';
 
   constructor(private itemservice: ItemService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.lijstenId = this.route.snapshot.paramMap.get('lijstid');
+    this.listId = parseInt(this.lijstenId);
     if (this.lijstenId != null) {
       this.getItems();
     }
@@ -31,7 +33,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   }
 
   add() {
-    this.router.navigate(['item/form'], {state: {listId: this.lijstenId,mode: 'add'}});
+    this.router.navigate(['item/form'], {state: {listId: this.listId,mode: 'add'}});
   }
 
   done(id: number) {
@@ -40,6 +42,14 @@ export class ItemComponent implements OnInit, OnDestroy {
 
   notdone(id: number) {
     this.router.navigate(['item/status'], {state: {Id: id,mode: 'notdone'}})
+  }
+
+  higher(id: number) {
+    this.router.navigate(['item/status'], {state: {Id: id,mode: 'higher'}})
+  }
+
+  lower(id: number) {
+    this.router.navigate(['item/status'], {state: {Id: id,mode: 'lower'}})
   }
 
   edit(id: number) {

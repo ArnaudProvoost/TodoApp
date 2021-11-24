@@ -4,4 +4,5 @@ export interface Item {
   title: string;
   datum: string;
   statusId: number;
+  volgorde : number;
 }

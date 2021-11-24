@@ -10,7 +10,7 @@ export class ItemService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getItemsByListId(lijstenId: string): Observable<Item[]> {
+  getItemsByListId(lijstenId: number): Observable<Item[]> {
     return this.httpClient.get<Item[]>("http://localhost:3000/items?_expand=list&listId="+lijstenId)
   }
 
