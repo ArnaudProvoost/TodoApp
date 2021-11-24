@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LijstFormComponent } from './lijst-form/lijst-form.component';
 import { ItemComponent } from './item/item.component';
 import { ItemFormComponent } from './item-form/item-form.component';
+import { ItemeditstatusComponent } from './itemeditstatus/itemeditstatus.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ItemFormComponent } from './item-form/item-form.component';
     LijstComponent,
     LijstFormComponent,
     ItemComponent,
-    ItemFormComponent
+    ItemFormComponent,
+    ItemeditstatusComponent
   ],
   imports: [
     BrowserModule,

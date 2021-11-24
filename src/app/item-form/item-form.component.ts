@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Item } from '../Item';
 import { ItemService } from '../item.service';
-import { Lijst } from '../lijst';
-import { LijstService } from '../lijst.service';
 
 @Component({
   selector: 'app-item-form',
@@ -15,10 +13,9 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   isAdd: boolean = false;
   isEdit: boolean = false;
   itemId: number = 0;
-  listId: number = 0
+  listId: number = 0;
 
   item: Item = { id: 0,title: "",listId: 0,statusId: 0,datum: ""}
-  lists: Lijst[] = [];
 
   isSubmitted: boolean = false;
   errorMessage: string = "";
@@ -26,12 +23,11 @@ export class ItemFormComponent implements OnInit, OnDestroy {
   item$: Subscription = new Subscription();
   postItem$: Subscription = new Subscription();
   putItem$: Subscription = new Subscription();
-  lists$: Subscription = new Subscription();
 
   constructor(private router: Router, private itemservice: ItemService) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
-    this.itemId = this.router.getCurrentNavigation()?.extras.state?.id;
+    this.itemId = this.router.getCurrentNavigation()?.extras.state?.Id;
     this.listId = this.router.getCurrentNavigation()?.extras.state?.listId;
 
     if (this.itemId != null && this.itemId > 0) {
@@ -39,8 +35,7 @@ export class ItemFormComponent implements OnInit, OnDestroy {
     }
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   ngOnDestroy(): void {
     this.item$.unsubscribe();
