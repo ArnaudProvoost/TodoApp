@@ -16,6 +16,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   lijstenId: any;
   listId: number = 0;
   errorMessage: string = '';
+  items_length: number = 0;
 
   constructor(private itemservice: ItemService, private route: ActivatedRoute, private router: Router) {}
 
@@ -68,6 +69,7 @@ export class ItemComponent implements OnInit, OnDestroy {
 
   getItems() {
     this.itemservice.getItemsByListId(this.lijstenId).subscribe(result => this.items = result);
+    this.items_length = this.items.length
   }
 
   sortTable(n: number) {

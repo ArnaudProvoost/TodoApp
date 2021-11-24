@@ -36,7 +36,7 @@
       "listId": 1,
       "statusId": 3,
       "datum": "2021-11-24",
-      "volgorde": 2
+      "volgorde": 4
     },
     {
       "id": 3,
@@ -44,7 +44,7 @@
       "listId": 1,
       "statusId": 3,
       "datum": "2021-11-25",
-      "volgorde": 4
+      "volgorde": 3
     },
     {
       "id": 4,
@@ -52,7 +52,7 @@
       "listId": 1,
       "statusId": 3,
       "datum": "2021-11-28",
-      "volgorde": 3
+      "volgorde": 2
     },
     {
       "id": 5,

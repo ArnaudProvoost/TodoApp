@@ -67,7 +67,7 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
     }
     if (this.isLower || this.isHigher) {
       if (this.item_2.id == 0) {
-        await this.sleep(150);
+        await this.sleep(10);
       }
     }
     if (this.isDone) {
