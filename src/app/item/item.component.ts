@@ -44,12 +44,12 @@ export class ItemComponent implements OnInit, OnDestroy {
     this.router.navigate(['item/status'], {state: {Id: id,mode: 'notdone'}})
   }
 
-  higher(id: number) {
-    this.router.navigate(['item/status'], {state: {Id: id,mode: 'higher'}})
+  higher(id: number,volgorde: number) {
+    this.router.navigate(['item/status'], {state: {Id: id,volgorde: volgorde,listId: this.listId,mode: 'higher'}})
   }
 
-  lower(id: number) {
-    this.router.navigate(['item/status'], {state: {Id: id,mode: 'lower'}})
+  lower(id: number,volgorde: number) {
+    this.router.navigate(['item/status'], {state: {Id: id,volgorde: volgorde,listId: this.listId,mode: 'lower'}})
   }
 
   edit(id: number) {

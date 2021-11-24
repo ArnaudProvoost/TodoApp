@@ -11,7 +11,7 @@ export class ItemService {
   constructor(private httpClient: HttpClient) { }
 
   getItemsByListId(lijstenId: number): Observable<Item[]> {
-    return this.httpClient.get<Item[]>("http://localhost:3000/items?_expand=list&listId="+lijstenId)
+    return this.httpClient.get<Item[]>("http://localhost:3000/items?_expand=list&_sort=volgorde&_order=asc&listId="+lijstenId)
   }
 
   getItemById(id: number): Observable<Item> {
@@ -34,5 +34,9 @@ export class ItemService {
 
   deleteItem(id: number): Observable<Item> {
     return this.httpClient.delete<Item>("http://localhost:3000/items/"+id);
+  }
+
+  GetItemByVolgorde(volgorde: number,listId:number): Observable<Item[]> {
+    return this.httpClient.get<Item[]>("http://localhost:3000/items?volgorde="+volgorde+"&listId="+listId)
   }
 }

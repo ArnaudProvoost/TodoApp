@@ -15,14 +15,20 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
   isHigher: boolean = false;
   isLower: boolean = false;
   itemId: number = 0;
+  listId: number = 0;
+  item_2Id: number = 0;
+  item_volgorde: number = 0;
 
   item: Item = {id: 0,title: "",listId: 0,statusId: 0,datum: "",volgorde: 0}
+  item_2: Item = {id: 0,title: "",listId: 0,statusId: 0,datum: "",volgorde: 0}
 
   errorMessage: string = "";
 
   item$: Subscription = new Subscription();
+  item_2$: Subscription = new Subscription();
   postItem$: Subscription = new Subscription();
-  putItem$: Subscription = new Subscription();
+  postItem_2$: Subscription = new Subscription();
+
 
   constructor(private router: Router, private itemservice: ItemService) {
     this.isDone = this.router.getCurrentNavigation()?.extras.state?.mode === 'done';
@@ -30,8 +36,18 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
     this.isHigher = this.router.getCurrentNavigation()?.extras.state?.mode === 'higher';
     this.isLower = this.router.getCurrentNavigation()?.extras.state?.mode === 'lower';
     this.itemId = this.router.getCurrentNavigation()?.extras.state?.Id;
+    this.item_volgorde = this.router.getCurrentNavigation()?.extras.state?.volgorde;
+    this.listId = this.router.getCurrentNavigation()?.extras.state?.listId;
+
 
     this.item$ = this.itemservice.getItemById(this.itemId).subscribe(result => this.item = result);
+
+    if (this.isHigher) {
+      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde-1,this.listId).subscribe(result => this.item_2 = result[0])
+    }
+    else if (this.isLower) {
+      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde+1,this.listId).subscribe(result => this.item_2 = result[0])
+    }
   }
 
   ngOnInit(): void {
@@ -41,12 +57,18 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.item$.unsubscribe();
     this.postItem$.unsubscribe();
-    this.putItem$.unsubscribe();
+    this.item_2$.unsubscribe();
+    this.postItem_2$.unsubscribe();
   }
 
   async submit() {
-    if (this.item.id == 0) {
+    if (this.item.id == 0){
       await this.sleep(150);
+    }
+    if (this.isLower || this.isHigher) {
+      if (this.item_2.id == 0) {
+        await this.sleep(150);
+      }
     }
     if (this.isDone) {
       this.item.statusId = 1;
@@ -67,13 +89,29 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
       });
     }
 
-    if (this.isHigher) {
-      // volgorde + 1 voor this.item
-      // volgorde -1 voor this.item-1
-    }
     if (this.isLower) {
-      // volorgde -1 voor this.item
-      // volgorde +1 voor this.item +1
+      this.item.volgorde = this.item.volgorde+1;
+      this.item_2.volgorde = this.item_volgorde;
+      this.item_2Id = this.item_2.id;
+      this.postItem$ = this.itemservice.putItem(this.itemId,this.item).subscribe();
+      this.postItem_2$ = this.itemservice.putItem(this.item_2Id,this.item_2).subscribe(result => {
+        this.router.navigateByUrl("items/"+this.item.listId);
+      },
+      error => {
+        this.errorMessage = error.message;
+      });
+    }
+    if (this.isHigher) {
+      this.item.volgorde = this.item_volgorde-1;
+      this.item_2.volgorde = this.item_volgorde;
+      this.item_2Id = this.item_2.id;
+      this.postItem$ = this.itemservice.putItem(this.itemId,this.item).subscribe();
+      this.postItem_2$ = this.itemservice.putItem(this.item_2Id,this.item_2).subscribe(result => {
+        this.router.navigateByUrl("items/"+this.item.listId);
+      },
+      error => {
+        this.errorMessage = error.message;
+      });
     }
   }
 

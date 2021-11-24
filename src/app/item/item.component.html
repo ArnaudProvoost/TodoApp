@@ -7,6 +7,7 @@
       <th scope="col" (click)="sortTable(1)">Name</th>
       <th scope="col" (click)="sortTable(2)">Deadline</th>
       <th scope="col" (click)="sortTable(3)">Bewerken</th>
+      <th scope="col" (click)="sortTable(4)">Volgorde</th>
     </tr>
   </thead>
   <tbody class="w-100">
@@ -19,7 +20,13 @@
       <td>{{item.datum}}</td>
       <td>
         <button type="button" class="btn btn-success" (click)="edit(item.id)"><i class="fas fa-edit"></i></button>
-        <button type="button" class="btn btn-danger" (click)="delete(item.id)"><i class="far fa-trash-alt"></i></button></td>
+        <button type="button" class="btn btn-danger" (click)="delete(item.id)"><i class="far fa-trash-alt"></i></button>
+      </td>
+      <td>{{item.volgorde}}</td>
+      <td>
+        <button type="button" class="btn btn-light" (click)="higher(item.id,item.volgorde)"><i class="fas fa-sort-up"></i></button>
+        <button type="button" class="btn btn-light" (click)="lower(item.id,item.volgorde)"><i class="fas fa-sort-down"></i></button>
+      </td>
     </tr>
   </tbody>
 </table>
