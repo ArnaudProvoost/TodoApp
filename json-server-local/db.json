@@ -40,7 +40,7 @@
       "id": 2,
       "title": "Test 4",
       "listId": 1,
-      "statusId": 3,
+      "statusId": 1,
       "datum": "2021-11-24",
       "volgorde": 4
     },
@@ -65,7 +65,7 @@
       "title": "Test 1",
       "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-24",
+      "datum": "2021-11-30",
       "volgorde": 1
     },
     {

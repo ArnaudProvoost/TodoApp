@@ -38,20 +38,12 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
     this.itemId = this.router.getCurrentNavigation()?.extras.state?.Id;
     this.item_volgorde = this.router.getCurrentNavigation()?.extras.state?.volgorde;
     this.listId = this.router.getCurrentNavigation()?.extras.state?.listId;
-
-
-    this.item$ = this.itemservice.getItemById(this.itemId).subscribe(result => this.item = result);
-
-    if (this.isHigher) {
-      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde-1,this.listId).subscribe(result => this.item_2 = result[0])
-    }
-    else if (this.isLower) {
-      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde+1,this.listId).subscribe(result => this.item_2 = result[0])
-    }
   }
 
   ngOnInit(): void {
     this.submit()
+    this.getItemById()
+    this.getItemByVolgorde()
   }
 
   ngOnDestroy(): void {
@@ -63,11 +55,11 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
 
   async submit() {
     if (this.item.id == 0){
-      await this.sleep(150);
+      await this.sleep(250);
     }
     if (this.isLower || this.isHigher) {
       if (this.item_2.id == 0) {
-        await this.sleep(10);
+        await this.sleep(200);
       }
     }
     if (this.isDone) {
@@ -117,5 +109,18 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
 
   sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  getItemById() {
+    this.item$ = this.itemservice.getItemById(this.itemId).subscribe(result => this.item = result);
+  }
+
+  getItemByVolgorde() {
+    if (this.isHigher) {
+      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde-1,this.listId).subscribe(result => this.item_2 = result[0])
+    }
+    else if (this.isLower) {
+      this.item_2$ = this.itemservice.GetItemByVolgorde(this.item_volgorde+1,this.listId).subscribe(result => this.item_2 = result[0])
+    }
   }
 }
