@@ -13,7 +13,7 @@ export class LijstService {
   }
 
   getLijsten(): Observable<Lijst[]> {
-    return this.httpClient.get<Lijst[]>("http://localhost:3000/lists");
+    return this.httpClient.get<Lijst[]>("http://localhost:3000/lists?_embed=items");
   }
 
   getLijstById(id: number): Observable<Lijst> {

@@ -2,6 +2,7 @@ import { state } from '@angular/animations';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ItemService } from '../item.service';
 import { Lijst } from '../lijst';
 import { LijstService } from '../lijst.service';
 
@@ -18,7 +19,7 @@ export class LijstComponent implements OnInit,OnDestroy {
 
   errorMessage: string = '';
 
-  constructor(private lijstservice: LijstService, private router: Router) { }
+  constructor(private lijstservice: LijstService, private router: Router,itemservice: ItemService) { }
 
   ngOnInit(): void {
     this.getLijsten();

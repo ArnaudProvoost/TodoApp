@@ -19,6 +19,12 @@
       "id": 4,
       "title": "Huiswerk",
       "lijstbackgroundcolor": "#00ff40"
+    },
+    {
+      "id": 5,
+      "title": "Test 1",
+      "lijstbackgroundcolor": "#8a0000",
+      "items": []
     }
   ],
   "items": [
@@ -61,6 +67,22 @@
       "statusId": 3,
       "datum": "2021-11-24",
       "volgorde": 1
+    },
+    {
+      "id": 6,
+      "title": "Test 1",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-11-25",
+      "volgorde": 1
+    },
+    {
+      "id": 7,
+      "title": "Test 2",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-11-26",
+      "volgorde": 2
     }
   ],
   "status": [
