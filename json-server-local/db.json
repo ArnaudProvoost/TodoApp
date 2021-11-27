@@ -24,7 +24,7 @@
   "items": [
     {
       "id": 8,
-      "title": "Stage Plaats Zoeken",
+      "title": "Stage plaats zoeken",
       "listId": 1,
       "statusId": 3,
       "datum": "2021-11-27",
@@ -32,7 +32,7 @@
     },
     {
       "id": 9,
-      "title": "Stage Contract Tekenen",
+      "title": "Stage contract tekenen",
       "listId": 1,
       "statusId": 3,
       "datum": "2021-12-13",
@@ -40,11 +40,11 @@
     },
     {
       "id": 10,
-      "title": "Geld terug betalen",
+      "title": "Stage aanvragen",
       "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-29",
-      "volgorde": 3
+      "datum": "2021-12-13",
+      "volgorde": 4
     },
     {
       "id": 11,
@@ -82,9 +82,9 @@
       "id": 15,
       "title": "Tarwe zoeken voor project 4.0",
       "listId": 1,
-      "statusId": 3,
+      "statusId": 1,
       "datum": "2021-12-02",
-      "volgorde": 4
+      "volgorde": 3
     }
   ],
   "status": [

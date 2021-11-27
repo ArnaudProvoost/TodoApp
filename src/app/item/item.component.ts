@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Item } from '../Item';
 import { ItemService } from '../item.service';
+import { Lijst } from '../lijst';
+import { LijstService } from '../lijst.service';
 
 @Component({
   selector: 'app-item',
@@ -12,19 +14,22 @@ import { ItemService } from '../item.service';
 export class ItemComponent implements OnInit, OnDestroy {
   items: Item[] = [];
   items$: Subscription = new Subscription();
+  lijst: Lijst = {id: 0,title: "", lijstbackgroundcolor: "",items: []};
+  lijst$: Subscription = new Subscription();
   deleteItem$: Subscription = new Subscription();
   lijstenId: any;
   listId: number = 0;
   errorMessage: string = '';
   items_length: number = 0;
 
-  constructor(private itemservice: ItemService, private route: ActivatedRoute, private router: Router) {}
+  constructor(private itemservice: ItemService,private lijstservice: LijstService, private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.lijstenId = this.route.snapshot.paramMap.get('lijstid');
     this.listId = parseInt(this.lijstenId);
     if (this.lijstenId != null) {
       this.getItems();
+      this.getLijst();
     }
   }
 
@@ -70,6 +75,10 @@ export class ItemComponent implements OnInit, OnDestroy {
   getItems() {
     this.itemservice.getItemsByListId(this.lijstenId).subscribe(result => this.items = result);
     this.items_length = this.items.length
+  }
+
+  getLijst() {
+    this.lijstservice.getLijstById(this.listId).subscribe(result => this.lijst = result);
   }
 
   sortTable(n: number) {

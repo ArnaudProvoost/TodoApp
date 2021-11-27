@@ -1,5 +1,7 @@
-<h1>Lijsten Todo</h1>
-<button type="button" class="btn btn-success addBtn mb-2" (click)="add()"><i class="fas fa-plus"></i> Add new lijst</button>
+<div class="row mb-3">
+  <h1 class="mb-2 col-12 col-md-6">Todo applicatie</h1>
+  <button type="button col-12 col-md-6" class="btn btn-success addBtn mb-2 mt-4 mt-lg-0 ml-md-auto mr-40px" (click)="add()"> Voeg een nieuwe lijst toe</button>
+</div>
 <div class="row w-100">
   <div *ngFor="let lijst of lijsten" class="col-lg-4 col-12 col-md-6 p-2 lijst-div d-flex">
     <div class="card-div d-flex w-100">

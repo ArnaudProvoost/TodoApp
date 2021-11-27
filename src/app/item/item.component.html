@@ -1,20 +1,22 @@
-<h1></h1>
-<button type="button" class="btn btn-success addBtn mt-4" (click)="add()"><i class="fas fa-plus"></i> Add new item</button>
+<div class="row mb-1 mt-3">
+  <h1 class="mb-2 col-12 col-md-6">{{lijst.title}}</h1>
+  <button type="button col-12 col-md-6" class="btn btn-success addBtn mt-4 mt-lg-0 ml-md-auto mr-40px" (click)="add()"> Voeg een nieuw item toe aan de lijst</button>
+</div>
 <table class="table mt-5 table-striped" id="itemtable">
   <thead class="thead-light">
     <tr>
       <th scope="col" (click)="sortTable(0)">Status</th>
-      <th scope="col" (click)="sortTable(1)">Name</th>
+      <th scope="col" (click)="sortTable(1)">Naam</th>
       <th scope="col" (click)="sortTable(2)">Deadline</th>
       <th scope="col" (click)="sortTable(3)">Bewerken</th>
-      <th scope="col" (click)="sortTable(4)">Volgorde</th>
+      <th scope="col" (click)="sortTable(5)">Volgorde</th>
     </tr>
   </thead>
   <tbody class="w-100">
     <tr *ngFor="let item of items">
       <td>
-        <a *ngIf="item.statusId == 3" (click)="done(item.id)"><i class="far fa-circle notdone"></i></a>
-        <a *ngIf="item.statusId == 1" (click)="notdone(item.id)"><i class="fas fa-check-circle done"></i></a>
+        <a *ngIf="item.statusId == 3" class="status_buttons" (click)="done(item.id)"><i class="far fa-circle notdone"></i></a>
+        <a *ngIf="item.statusId == 1" class="status_buttons" (click)="notdone(item.id)"><i class="fas fa-check-circle done"></i></a>
       </td>
       <td>{{item.title}}</td>
       <td>{{item.datum}}</td>
@@ -25,6 +27,9 @@
       <td>
         <button *ngIf="item.volgorde != 1" type="button" class="btn btn-light" (click)="higher(item.id,item.volgorde)"><i class="fas fa-sort-up"></i></button>
         <button *ngIf="item.volgorde != items.length" type="button" class="btn btn-light" (click)="lower(item.id,item.volgorde)"><i class="fas fa-sort-down"></i></button>
+      </td>
+      <td [hidden]="1==1">
+        {{item.volgorde}}
       </td>
     </tr>
   </tbody>

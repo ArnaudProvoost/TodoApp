@@ -1,18 +1,20 @@
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
+<h2 *ngIf="isAdd" class="mb-3">Een item toevoegen</h2>
+<h2 *ngIf="isEdit" class="mb-3">De item met opdracht {{item.title}} aanpassen</h2>
 <form (ngSubmit)="onSubmit()" #itemForm="ngForm">
   <div class="form-group">
-    <label for="name">Title</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="title" [(ngModel)]="item.title"
+    <label for="name">Opdracht</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Opdracht" [(ngModel)]="item.title"
            #name="ngModel" required>
-    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">title is required</div>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger mt-1">opdracht is nodig</div>
   </div>
   <div class="form-group">
     <label for="name">Deadline</label>
     <input type="date" class="form-control" id="datum" name="datum" placeholder="datum" [(ngModel)]="item.datum"
            #name="ngModel">
   </div>
-  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!itemForm.form.valid || isSubmitted">Add</button>
-  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!itemForm.form.valid || isSubmitted">Save</button>
+  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!itemForm.form.valid || isSubmitted">Opdracht toevoegen</button>
+  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!itemForm.form.valid || isSubmitted">Opdracht opslaan</button>
 </form>

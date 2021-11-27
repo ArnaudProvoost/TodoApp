@@ -55,11 +55,11 @@ export class ItemeditstatusComponent implements OnInit, OnDestroy {
 
   async submit() {
     if (this.item.id == 0){
-      await this.sleep(250);
+      await this.sleep(500);
     }
     if (this.isLower || this.isHigher) {
       if (this.item_2.id == 0) {
-        await this.sleep(200);
+        await this.sleep(500);
       }
     }
     if (this.isDone) {

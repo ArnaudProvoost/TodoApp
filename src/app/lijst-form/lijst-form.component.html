@@ -1,21 +1,21 @@
 <div class="alert alert-danger" role="alert" *ngIf="isSubmitted && errorMessage">
   {{errorMessage}}
 </div>
-<h2 *ngIf="isAdd">Een lijst toevoegen</h2>
-<h2 *ngIf="isEdit">De lijst met title {{lijst.title}} aanpassen</h2>
+<h2 *ngIf="isAdd" class="mb-3">Een lijst toevoegen</h2>
+<h2 *ngIf="isEdit" class="mb-3">De lijst met titel {{lijst.title}} aanpassen</h2>
 <form (ngSubmit)="onSubmit()" #categoryForm="ngForm">
   <div class="form-group Title">
-    <label for="name">Titel lijst</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="Title" [(ngModel)]="lijst.title"
+    <label for="name">Naam lijst</label>
+    <input type="text" class="form-control" id="title" name="title" placeholder="Naam lijst" [(ngModel)]="lijst.title"
            #name="ngModel" required>
-    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Title is required</div>
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger mt-1">Title is nodig</div>
   </div>
   <div class="form-group Color">
-    <label for="name">Achtergrond Kleur</label>
+    <label for="bgcolor">Achtergrond kleur lijst</label>
     <input type="color" class="form-control" id="bgccolor" name="bgccolor" placeholder="Color" [(ngModel)]="lijst.lijstbackgroundcolor"
-           #name="ngModel" required>
-    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Achtergrondkleur is required</div>
+           #bgcolor="ngModel" required>
+    <div [hidden]="bgcolor.valid || name.pristine" class="alert alert-danger mt-1">Achtergrondkleur is nodig</div>
   </div>
-  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!categoryForm.form.valid || isSubmitted">Add</button>
-  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!categoryForm.form.valid || isSubmitted">Save</button>
+  <button type="submit" class="btn btn-primary" *ngIf="isAdd" [disabled]="!categoryForm.form.valid || isSubmitted">Voeg toe</button>
+  <button type="submit" class="btn btn-primary" *ngIf="isEdit" [disabled]="!categoryForm.form.valid || isSubmitted">Sla de lijst op</button>
 </form>
