@@ -19,70 +19,72 @@
       "id": 4,
       "title": "Huiswerk",
       "lijstbackgroundcolor": "#00ff40"
-    },
-    {
-      "id": 5,
-      "title": "Test 1",
-      "lijstbackgroundcolor": "#8a0000",
-      "items": []
     }
   ],
   "items": [
     {
-      "id": 1,
-      "title": "Test 5",
-      "listId": 1,
-      "statusId": 1,
-      "datum": "2021-11-11",
-      "volgorde": 5
-    },
-    {
-      "id": 2,
-      "title": "Test 4",
-      "listId": 1,
-      "statusId": 1,
-      "datum": "2021-11-24",
-      "volgorde": 4
-    },
-    {
-      "id": 3,
-      "title": "Test 3",
+      "id": 8,
+      "title": "Stage Plaats Zoeken",
       "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-25",
+      "datum": "2021-11-27",
+      "volgorde": 1
+    },
+    {
+      "id": 9,
+      "title": "Stage Contract Tekenen",
+      "listId": 1,
+      "statusId": 3,
+      "datum": "2021-12-13",
+      "volgorde": 2
+    },
+    {
+      "id": 10,
+      "title": "Geld terug betalen",
+      "listId": 1,
+      "statusId": 3,
+      "datum": "2021-11-29",
       "volgorde": 3
     },
     {
-      "id": 4,
-      "title": "Test 2",
-      "listId": 1,
+      "id": 11,
+      "title": "App project aanmaken",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-11-28",
+      "volgorde": 1
+    },
+    {
+      "id": 12,
+      "title": "Gesprek met Klant X",
+      "listId": 2,
+      "statusId": 3,
+      "datum": "2021-12-16",
+      "volgorde": 2
+    },
+    {
+      "id": 13,
+      "title": "Cadeau voor Bart kopen",
+      "listId": 3,
+      "statusId": 3,
+      "datum": "2022-01-01",
+      "volgorde": 1
+    },
+    {
+      "id": 14,
+      "title": "Eten kopen voor feestdagen",
+      "listId": 3,
       "statusId": 3,
       "datum": "2021-11-28",
       "volgorde": 2
     },
     {
-      "id": 5,
-      "title": "Test 1",
+      "id": 15,
+      "title": "Tarwe zoeken voor project 4.0",
       "listId": 1,
       "statusId": 3,
-      "datum": "2021-11-30",
-      "volgorde": 1
-    },
-    {
-      "id": 6,
-      "title": "Test 1",
-      "listId": 2,
-      "statusId": 3,
-      "datum": "2021-11-25",
-      "volgorde": 1
-    },
-    {
-      "id": 7,
-      "title": "Test 2",
-      "listId": 2,
-      "statusId": 3,
-      "datum": "2021-11-26",
-      "volgorde": 2
+      "datum": "2021-12-02",
+      "volgorde": 4
     }
   ],
   "status": [

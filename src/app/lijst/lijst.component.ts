@@ -13,6 +13,8 @@ import { LijstService } from '../lijst.service';
 })
 export class LijstComponent implements OnInit,OnDestroy {
   lijsten: Lijst[] = [];
+  aantalDone: number = 0;
+  aantalNotDone: number = 0;
 
   lijsten$: Subscription = new Subscription();
   deleteLijst$: Subscription = new Subscription();
